@@ -10,8 +10,8 @@ palavras = ''
 for i in data["Texto"]:
     palavras = palavras + i
 
-palavras.lower()
-listaPalavras = palavras.split() # separa cada palavra presente no texto em uma lista = ['palavraExemplo', 'palavraExemplo', 'palavraExemplo']
+
+listaPalavras = palavras.lower().split() # separa cada palavra presente no texto em uma lista = ['palavraExemplo', 'palavraExemplo', 'palavraExemplo']
 
 
 palavrafreqs = []
