@@ -5,18 +5,18 @@ import csv, string
 
 data = pd.read_excel("debate_band.xlsx", usecols='F')
 
-
+# Pega todos o texto e coloca numa unica string
 palavras = ''
 for i in data["Texto"]:
     palavras = palavras + i
 
+# separa cada palavra presente no texto em uma lista = ['palavraExemplo', 'palavraExemplo', 'palavraExemplo'] e colocar e lowercase
+listaPalavras = palavras.lower().split() 
 
-listaPalavras = palavras.lower().split() # separa cada palavra presente no texto em uma lista = ['palavraExemplo', 'palavraExemplo', 'palavraExemplo']
-
-
+# captura a frequencia das palavras e adiciona na lista
 palavrafreqs = []
 for p in listaPalavras:
-    palavrafreqs.append(listapalavras.count(p))
+    palavrafreqs.append(listaPalavras.count(p))
 
 
 
@@ -24,7 +24,7 @@ for p in listaPalavras:
 
 colunas = ['Palavra', 'Frequência']
 
-linhas = [str(list(zip(listaPalavras, palavrafreqs)))]
+linhas = list(zip(listaPalavras, palavrafreqs))
 
 with open('frequencias.csv', 'w', newline="") as f:
     write = csv.writer(f, delimiter=";")
